@@ -12,9 +12,9 @@ import time
 # ============================================================
 # 本地测试时，你可以修改这里接入你的 API
 # ============================================================
-BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"   # 填入你的 API endpoint
+BASE_URL = "[YOUR_URL]"   # 填入你的 API endpoint
 API_KEY  = "[YOUR API_KEY]"                     # 填入你的 API key
-MODEL    = "qwen3.6-max-preview"           # 填入你的模型名
+MODEL    = "[YOUR_MODEL_NAME]"           # 填入你的模型名
 
 # ============================================================
 # 以下代码无需修改
