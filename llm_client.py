@@ -101,8 +101,10 @@ def truncate_to_tokens(text: str, max_tokens: int) -> str:
     """将文本截断到至多 max_tokens 个 token（使用真实 tokenizer）。"""
     global _tokenizer, _tokenizer_loaded
     if not _tokenizer_loaded:
-        _tokenizer = _load_tokenizer()
-        _tokenizer_loaded = True
+        with _tokenizer_lock:
+            if not _tokenizer_loaded:
+                _tokenizer = _load_tokenizer()
+                _tokenizer_loaded = True
     if not text:
         return text
     ids = _tokenizer(text, add_special_tokens=False)["input_ids"]
